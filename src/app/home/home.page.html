@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home-page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+  <!-- <ion-button (click)="abc()" class="btncls">Register</ion-button>
+  <ion-button (click)="def()" class="btncls">Register def</ion-button> -->
+  <!-- <ion-button (click)="outer()" class="btncls">Register outer</ion-button> -->
+<ion-content class="ion-contentcls" scroll-y="false">
+  <ion-button (click)="outer()" class="btncls">Register outer</ion-button>
+  <h1 class="registertxt-cls">Registration Form</h1>
+  <ion-row>
+    <ion-col size="12">
+      <form class="form-cls" [formGroup]="ionicForm" (ngSubmit)="submitForm();testForm()" novalidate>
+        <ion-list>
+            <ion-item lines="full">
+              <ion-label position="floating">Name</ion-label>
+              <ion-input type="text" formControlName="name"  ></ion-input>
+            </ion-item>
+
+            <ion-item lines="full">
+              <ion-label position="floating">Father's Name</ion-label>
+              <ion-input type="text" formControlName="fatherName" required></ion-input>
+            </ion-item>
+        
+            <ion-item lines="full">
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" formControlName="email"  required></ion-input>
+            </ion-item>
+        
+            <ion-item lines="full" class="dob-cls">
+              <ion-label position="floating">DOB</ion-label>
+              <ion-input type="text" formControlName="dob"  required></ion-input>
+            </ion-item>
+        
+            <ion-item lines="full">
+              <ion-label position="floating">Mobile</ion-label>
+              <ion-input type="text" formControlName="mobile" required></ion-input>
+            </ion-item>
+      </ion-list>
+            <ion-row>
+              <ion-col>
+                <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
+              </ion-col>
+            </ion-row>
+          </form>
+    </ion-col>
+  </ion-row>
+
+  <!-- <ion-button (click)="testForm()" class="btncls">Test form via sending data </ion-button> -->
+</ion-content>
