@@ -5,6 +5,8 @@ import { Router,NavigationExtras } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -13,6 +15,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class HomePage {
   ionicForm: FormGroup;
+  gender: string = '';
+  // gender: FormControl = new FormControl('');
 
   constructor(private navCtrl :NavController, private dataService: DataService,private router: Router,private route: ActivatedRoute,public formBuilder: FormBuilder) { 
     this.ionicForm=this.formBuilder.group({
@@ -20,7 +24,8 @@ export class HomePage {
       fatherName:"",
       email:"",
       dob:"",
-      mobile:""
+      mobile:"",
+      gender: ""
     })
   }
   
@@ -44,7 +49,8 @@ export class HomePage {
       fathername:this.ionicForm.value.fatherName,
       email:this.ionicForm.value.email,
       dob:this.ionicForm.value.dob,
-      mobile:this.ionicForm.value.mobile
+      mobile:this.ionicForm.value.mobile,
+      gender: this.ionicForm.value.gender
     }
     console.log(user,"user-test-form-data")
     // console.log(user,'user1');
@@ -93,7 +99,8 @@ export class HomePage {
       fathername:this.ionicForm.value.fatherName,
       email:this.ionicForm.value.email,
       dob:this.ionicForm.value.dob,
-      mobile:this.ionicForm.value.mobile
+      mobile:this.ionicForm.value.mobile,
+      gender:this.ionicForm.value.gender
     }
     console.log(user,"user")
     // console.log(user,'user1');

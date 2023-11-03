@@ -5,7 +5,7 @@ describe('TestFormSendDataPage', () => {
   let component: TestFormSendDataPage;
   let fixture: ComponentFixture<TestFormSendDataPage>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     fixture = TestBed.createComponent(TestFormSendDataPage);
     component = fixture.componentInstance;
     fixture.detectChanges();

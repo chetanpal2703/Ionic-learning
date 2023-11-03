@@ -39,6 +39,23 @@
               <ion-label position="floating">Mobile</ion-label>
               <ion-input type="text" formControlName="mobile" required></ion-input>
             </ion-item>
+            <ion-radio-group formControlName="gender" >
+              <ion-item>
+                <ion-label>male</ion-label>
+                <ion-radio value="Male" ></ion-radio>
+              </ion-item>
+              
+              <ion-item>
+                <ion-label>female</ion-label>
+                <ion-radio value="Female" ></ion-radio>
+              </ion-item>
+              
+              <ion-item>
+                <ion-label>other</ion-label>
+                <ion-radio value="other" ></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+            
       </ion-list>
             <ion-row>
               <ion-col>
