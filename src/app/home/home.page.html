@@ -8,7 +8,7 @@
   <!-- <ion-button (click)="abc()" class="btncls">Register</ion-button>
   <ion-button (click)="def()" class="btncls">Register def</ion-button> -->
   <!-- <ion-button (click)="outer()" class="btncls">Register outer</ion-button> -->
-<ion-content class="ion-contentcls" scroll-y="false">
+<ion-content class="ion-contentcls" >
   <ion-button (click)="outer()" class="btncls">Register outer</ion-button>
   <h1 class="registertxt-cls">Registration Form</h1>
   <ion-row>
@@ -39,7 +39,7 @@
               <ion-label position="floating">Mobile</ion-label>
               <ion-input type="text" formControlName="mobile" required></ion-input>
             </ion-item>
-            <ion-radio-group formControlName="gender" >
+            <ion-radio-group formControlName="gender" class="flex-container" >
               <ion-item>
                 <ion-label>male</ion-label>
                 <ion-radio value="Male" ></ion-radio>
@@ -55,6 +55,23 @@
                 <ion-radio value="other" ></ion-radio>
               </ion-item>
             </ion-radio-group>
+
+            <!-- <ion-checkbox-group formControlName="hobbies"> -->
+              
+              <ion-item>
+                <ion-label>Reading</ion-label>
+                <ion-checkbox formControlName="hobbies" value="reading"></ion-checkbox>
+              </ion-item>
+              
+            <!-- </ion-checkbox-group> -->
+            <ion-item>
+              <label formArrayName="skills" *ngFor="let order of ordersFormArray.controls; let i = index">
+                <input type="checkbox" [formControlName]="i"> 
+                {{webData[i].name}} 
+              </label>
+            </ion-item>
+
+
             
       </ion-list>
             <ion-row>

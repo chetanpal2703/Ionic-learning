@@ -3,7 +3,7 @@ import { NavController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { Router,NavigationExtras } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -16,7 +16,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class HomePage {
   ionicForm: FormGroup;
   gender: string = '';
+  hobbies:string='';
+  selectedHobby: string = '';
   // gender: FormControl = new FormControl('');
+  webData = [
+
+    { id: 1, name: 'PHP',checked: false },
+
+    { id: 2, name: 'Laravel',checked: false },
+
+    { id: 3, name: 'Angular',checked: false },
+
+    { id: 4, name: 'React',checked: false },
+
+    { id: 5, name: 'Next.js',checked: false },
+    
+
+  ];
+  get ordersFormArray() {
+    return this.ionicForm.controls['skills'] as FormArray;
+  }
+
+  
 
   constructor(private navCtrl :NavController, private dataService: DataService,private router: Router,private route: ActivatedRoute,public formBuilder: FormBuilder) { 
     this.ionicForm=this.formBuilder.group({
@@ -25,8 +46,17 @@ export class HomePage {
       email:"",
       dob:"",
       mobile:"",
-      gender: ""
+      gender: "",
+      hobbies:[false],
+      skills: new FormArray([])
     })
+    this.addCheckboxesToForm();
+  }
+  
+  private addCheckboxesToForm() {
+
+    this.webData.forEach(() => this.ordersFormArray.push(new FormControl(false)));
+
   }
   
   def(){
@@ -44,13 +74,23 @@ export class HomePage {
     if (this.ionicForm.valid) {
       // console.log(this.ionicForm.value.name);
       console.log(this.ionicForm,"ionic-form-test form data")
+      const selectedOrderIds = this.ionicForm.value.skills
+      .map((checked:any, i:number) => {
+        this.webData[i].checked=checked;
+        console.log(this.webData[i],"this.webData[i+1]")
+      })
+      // .filter((v:any) => v !== null);
+    console.log(this.webData,"selected data ");
+      console.log(this.ionicForm.value.skills,"skiklsdfsd data ");
     let user = {
       name:this.ionicForm.value.name,
       fathername:this.ionicForm.value.fatherName,
       email:this.ionicForm.value.email,
       dob:this.ionicForm.value.dob,
       mobile:this.ionicForm.value.mobile,
-      gender: this.ionicForm.value.gender
+      gender: this.ionicForm.value.gender,
+      hobbies:this.ionicForm.value.hobbies,
+      skills: this.webData
     }
     console.log(user,"user-test-form-data")
     // console.log(user,'user1');
@@ -94,13 +134,20 @@ export class HomePage {
     if (this.ionicForm.valid) {
       // console.log(this.ionicForm.value.name);
       console.log(this.ionicForm,"ionic-form")
+      const selectedOrderIds = this.ionicForm.value.skills
+      .map((checked:any, i:number) => {
+        this.webData[i].checked=checked;
+        console.log(this.webData[i],"this.webData[i+1]")
+      })
     let user = {
       name:this.ionicForm.value.name,
       fathername:this.ionicForm.value.fatherName,
       email:this.ionicForm.value.email,
       dob:this.ionicForm.value.dob,
       mobile:this.ionicForm.value.mobile,
-      gender:this.ionicForm.value.gender
+      gender:this.ionicForm.value.gender,
+      hobbies:this.ionicForm.value.hobbies,
+      skills: this.webData
     }
     console.log(user,"user")
     // console.log(user,'user1');
@@ -122,3 +169,5 @@ export class HomePage {
 
 
 }
+
+

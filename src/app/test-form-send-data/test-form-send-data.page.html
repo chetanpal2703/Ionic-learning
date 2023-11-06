@@ -15,5 +15,14 @@
       <p>{{receivedData.fathername}}</p>
       <p>{{receivedData.dob}}</p>
       <p>{{receivedData.mobile}}</p>
-      <p>{{ receivedData.gender }}</p>
+      <p>{{receivedData.gender }}</p>
+      <p>{{receivedData.hobbies }}</p>
+      <p>{{receivedData.skills[0].name}}</p>
+
+  <ion-list>
+    <ion-item *ngFor="let skill of receivedData.skills">
+      {{ skill.name }} - Checked: {{ skill.checked ? 'Yes' : 'No' }}
+    </ion-item>
+  </ion-list>
+
 </ion-content>
