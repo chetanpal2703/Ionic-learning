@@ -40,16 +40,18 @@ export class HomePage {
   
 
   constructor(private navCtrl :NavController, private dataService: DataService,private router: Router,private route: ActivatedRoute,public formBuilder: FormBuilder) { 
-    this.ionicForm=this.formBuilder.group({
-      name:"",
-      fatherName:"",
-      email:"",
-      dob:"",
-      mobile:"",
-      gender: "",
-      hobbies:[true],
+    this.ionicForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
+      fatherName: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
+      email: ['', [Validators.required, Validators.email]],
+      dob: ['', [Validators.required, Validators.pattern('^[0-9]{2}-[0-9]{2}-[0-9]{4}$')]],
+      // mobile: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      mobile: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      gender: ['', Validators.required],
+      hobbies: [true],
       skills: new FormArray([])
-    })
+    });
+    
     this.addCheckboxesToForm();
   }
   
