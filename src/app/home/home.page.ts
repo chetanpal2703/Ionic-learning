@@ -47,7 +47,7 @@ export class HomePage {
       dob:"",
       mobile:"",
       gender: "",
-      hobbies:[false],
+      hobbies:[true],
       skills: new FormArray([])
     })
     this.addCheckboxesToForm();
