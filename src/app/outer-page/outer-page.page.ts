@@ -35,6 +35,9 @@ export class OuterPagePage implements OnInit {
       const receivedDatas = JSON.parse(params['special']);
       this.receivedData = receivedDatas;
     });
+    
+console.log(this.receivedData.password1,"received data on outer-page")
+
 
   }
 

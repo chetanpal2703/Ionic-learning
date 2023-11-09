@@ -1,6 +1,9 @@
 
 
 
+.change-font {
+  font-family: 'Poppins', sans-serif;
+}
 
 ion-input.inputcls {
   border: 1px solid gray;
@@ -29,9 +32,44 @@ h1.registertxt-cls {
 }
 .flex-container{
   display: flex;
+  font-family: 'Poppins', sans-serif;
 }
 
+.gender-font{
+  font-family: 'poppins',sans-serif;
+  text-overflow: unset;
+  overflow: unset;
 
+}
+// .ion-itemclass{
+//   padding: 0px;
+// }
 
+// .item-native{
+//   padding-left: 9px;
+// }
+// .legacy-input.sc-ion-input-md-h .native-input.sc-ion-input-md {
+  
+//   padding-top:0% !important;
+//   padding-bottom:0% !important;
+  
+// }
+// ion-item-inner {
+//   --inner-padding-top: 0 !important;
+// }
+// ion-item {
+//   --padding-end: 0px;
+//   --inner-padding-end: 0px;
+//   --inner-padding-end:0px;
+//   // here other custom CSS from documentation
+// }
 
-
+input.internal-autofill-selected {
+  background-color: none !important;
+  background-image: none !important;
+  // background-color: -internal-light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+  // color: fieldtext !important;
+}
+.passwordinput{
+  background-color: none !important;
+}

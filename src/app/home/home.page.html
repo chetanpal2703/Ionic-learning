@@ -9,14 +9,14 @@
   <ion-button (click)="def()" class="btncls">Register def</ion-button> -->
   <!-- <ion-button (click)="outer()" class="btncls">Register outer</ion-button> -->
 <ion-content class="ion-contentcls" >
-  <ion-button (click)="outer()" class="btncls">Register outer</ion-button>
+  <!-- <ion-button (click)="outer()" class="btncls">Register outer</ion-button> -->
   <h1 class="registertxt-cls">Registration Form</h1>
   <ion-row>
     <ion-col size="12">
       <form class="form-cls" [formGroup]="ionicForm" (ngSubmit)="submitForm();testForm()" novalidate>
         <ion-list>
-            <ion-item lines="full">
-              <ion-label position="floating">Name</ion-label>
+            <ion-item lines="full" class="ion-no-padding">
+              <ion-label position="floating" class="change-font">Name</ion-label>
               <ion-input type="text" formControlName="name"  ></ion-input>
               <ion-text color="danger" *ngIf="ionicForm.get('name')?.hasError('required') && ionicForm.get('name')?.touched">
                 Name is required.
@@ -25,9 +25,26 @@
                 Please enter a valid Name (only letters and spaces).
               </ion-text>
             </ion-item>
+            <!-- <ion-item lines="full" class="ion-no-padding">
+              <ion-label position="floating" class="change-font">password</ion-label>
+              <ion-input type="password" formControlName="password1"  ></ion-input>
+              <ion-text color="danger" *ngIf="ionicForm.get('name')?.hasError('required') && ionicForm.get('name')?.touched">
+                Name is required.
+              </ion-text>
+              <ion-text color="danger" *ngIf="ionicForm.get('name')?.hasError('pattern') && ionicForm.get('name')?.touched">
+                Please enter a valid Name (only letters and spaces).
+              </ion-text>
+            </ion-item> -->
+
+            <ion-item  >
+              <ion-label position="floating" >Password</ion-label>
+              <ion-input [type]="passwordType" formControlName="password1" class="passwordinput" autocomplete="off"></ion-input>
+              <ion-icon  slot="end" name="eye" item-end (click)="togglePassword()"></ion-icon>
+
+            </ion-item>
 
             <ion-item lines="full">
-              <ion-label position="floating">Father's Name</ion-label>
+              <ion-label position="floating" class="change-font">Father's Name</ion-label>
               <ion-input type="text" formControlName="fatherName" required></ion-input>
               <ion-text color="danger" *ngIf="ionicForm.get('fatherName')?.hasError('required') && ionicForm.get('fatherName')?.touched">
                 Father's Name is required.
@@ -39,7 +56,7 @@
             </ion-item>
         
             <ion-item lines="full">
-              <ion-label position="floating">Email</ion-label>
+              <ion-label position="floating" class="change-font">Email</ion-label>
               <ion-input type="email" formControlName="email"  required></ion-input>
               <ion-text color="danger" *ngIf="ionicForm.get('email')?.hasError('required') && ionicForm.get('email')?.touched">
                 Email is required.
@@ -50,7 +67,7 @@
             </ion-item>
         
             <ion-item lines="full" class="dob-cls">
-              <ion-label position="floating">DOB</ion-label>
+              <ion-label position="floating" class="change-font">DOB</ion-label>
               <ion-input type="text" formControlName="dob"  required></ion-input>
               <ion-text color="danger" *ngIf="ionicForm.get('dob')?.hasError('required') && ionicForm.get('dob')?.touched">
                 Date of Birth is required.
@@ -62,38 +79,42 @@
             </ion-item>
         
             <ion-item lines="full">
-              <ion-label position="floating">Mobile</ion-label>
+              <ion-label position="floating" class="change-font">Mobile</ion-label>
               <ion-input type="text" formControlName="mobile" required></ion-input>
               <ion-text color="danger" *ngIf="ionicForm.get('mobile')?.hasError('required') && ionicForm.get('mobile')?.touched">
                 Mobile number is required.
               </ion-text>
               <ion-text color="danger" *ngIf="ionicForm.get('mobile')?.hasError('pattern') && ionicForm.get('mobile')?.touched">
-                Please enter a valid mobile number (only integers).
+                Please enter a valid 10-digit mobile number.
               </ion-text>
+              <ion-text color="danger" *ngIf="ionicForm.get('mobile')?.hasError('invalidMobileLength')">
+                Please enter exactly 10 digits.
+              </ion-text>
+            
             </ion-item>
-            <ion-radio-group formControlName="gender" class="flex-container" >
-              <ion-item>
-                <ion-label>male</ion-label>
+            <!-- <ion-radio-group formControlName="gender" class="flex-container"  >
+              <ion-item class="ion-itemclass">
+                <ion-label class="gender-font">male</ion-label>
                 <ion-radio value="Male" ></ion-radio>
               </ion-item>
               
               <ion-item>
-                <ion-label>female</ion-label>
+                <ion-label class="gender-font">female</ion-label>
                 <ion-radio value="Female" ></ion-radio>
               </ion-item>
               
               <ion-item>
-                <ion-label>other</ion-label>
+                <ion-label class="gender-font" >other</ion-label>
                 <ion-radio value="other" ></ion-radio>
               </ion-item>
-            </ion-radio-group>
+            </ion-radio-group> -->
 
             <!-- <ion-checkbox-group formControlName="hobbies"> -->
               
-              <ion-item>
-                <ion-label>Reading</ion-label>
+              <!-- <ion-item>
+                <ion-label class="change-font">Reading</ion-label>
                 <ion-checkbox formControlName="hobbies" value="reading" checked="true"></ion-checkbox>
-              </ion-item>
+              </ion-item> -->
               
             <!-- </ion-checkbox-group> -->
             <!-- <ion-item>
