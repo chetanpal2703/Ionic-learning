@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { InnerPagePageRoutingModule } from './inner-page-routing.module';
-
+import { CustomStyleDirective } from './custom-style.directive';
 import { InnerPagePage } from './inner-page.page';
 
 @NgModule({
@@ -13,8 +13,9 @@ import { InnerPagePage } from './inner-page.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    InnerPagePageRoutingModule
+    InnerPagePageRoutingModule,
+    
   ],
-  declarations: [InnerPagePage]
+  declarations: [InnerPagePage,CustomStyleDirective,]
 })
 export class InnerPagePageModule {}

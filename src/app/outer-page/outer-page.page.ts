@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { DataService } from '../data.service';
 import { ActivatedRoute , Router} from '@angular/router';
@@ -10,6 +10,7 @@ import { ActivatedRoute , Router} from '@angular/router';
 })
 export class OuterPagePage implements OnInit {
   receivedData: any;
+  @Input() item = '';
   
   
 
