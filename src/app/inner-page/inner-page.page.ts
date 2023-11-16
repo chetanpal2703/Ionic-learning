@@ -78,6 +78,17 @@ export class InnerPagePage implements OnInit {
   //   // Access the input value using the template reference variable
   //   console.log('Input Value:', this.myInput.value);
   // }
+
+
+
+  public books: Array<any> = [
+    { title: "Math", description: "Math book desc 1" ,price:5,image:"../../assets/images/math.jpg"},
+    { title: "Physics", description: "Physics book desc 2" ,price:5,image:"../../assets/images/physics.jpg"},
+    { title: "Biology", description: "Biology book desc 3",price:5,image:"../../assets/images/biology.jpg" },
+    { title: "chemistry", description: "chemistry book desc 4 ",price:5,image: "../../assets/images/chemistry.jpg" }
+  ];
+
+  
   constructor() { }
 
   ngOnInit() {

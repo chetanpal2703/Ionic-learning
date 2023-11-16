@@ -67,5 +67,33 @@
   This div has a custom background color!
 </div>
 
+
+<img src="../../assets/images/chemistry.jpg" alt="">
+    <table>
+      <thead>
+        <tr>
+          <th>Book's Title</th>
+          <th>Books's Description</th>
+          <th>Books's Price</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of books; let i = index">
+        <tr>
+          <td>{{item.title}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.price}}</td>
+          <img src={{item.image}} alt="">
+          
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+
+
+  
+    
+
 </ion-content>
 
