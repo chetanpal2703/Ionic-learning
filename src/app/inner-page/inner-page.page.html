@@ -5,95 +5,142 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<!-- <ion-row>
-  <ion-col size="12">
-    <ion-list>
-      <ion-item>
-        <ion-input label="Name"></ion-input>
-      </ion-item>
-    </ion-list>
-  </ion-col>
-</ion-row> -->
-<div>
-  <!-- Button with property binding -->
-  <button [disabled]="isButtonDisabled" >Click me</button>
+  <!-- <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item>
+            <ion-input label="Name"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row> -->
+  <div>
+    <!-- Button with property binding -->
+    <button [disabled]="isButtonDisabled">Click me</button>
 
-  <!-- Button to toggle the disabled state -->
-  <button (click)="toggleButtonState()">Toggle Button State</button>
-</div>
-<div>
-  <button (click)="handleClick()">Click me</button>
-  <p>{{ message }}</p>
+    <!-- Button to toggle the disabled state -->
+    <button (click)="toggleButtonState()">Toggle Button State</button>
+  </div>
+  <div>
+    <button (click)="handleClick()">Click me</button>
+    <p>{{ message }}</p>
 
-  <input (input)="handleInput($event)" placeholder="Type something">
-  <p>Input Value: {{ inputValue | uppercase }}</p>
+    <input (input)="handleInput($event)" placeholder="Type something" />
+    <p>Input Value: {{ inputValue | uppercase }}</p>
 
-  <select (change)="handleChange($event)">
-    <option value="option1">Option 1</option>
-    <option value="option2">Option 2</option>
-  </select>
-  <p>Selected Value: {{ selectValue }}</p>
+    <select (change)="handleChange($event)">
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+    </select>
+    <p>Selected Value: {{ selectValue }}</p>
 
-  <div (mouseover)="handleMouseOver()" (mouseout)="handleMouseOut()" style="background-color: blueviolet;">
-    <p>{{ mouseEventMessage }}</p>
-    <p>mouse</p>
+    <div
+      (mouseover)="handleMouseOver()"
+      (mouseout)="handleMouseOut()"
+      style="background-color: blueviolet"
+    >
+      <p>{{ mouseEventMessage }}</p>
+      <p>mouse</p>
+    </div>
+
+    <input
+      (keydown)="handleKeyDown($event)"
+      (keyup)="handleKeyUp($event)"
+      placeholder="Press a key"
+    />
+    <p>{{ keyEventMessage }}</p>
+
+    <form (submit)="handleSubmit()">
+      <button type="submit">Submit Form</button>
+    </form>
+    <p>{{ formSubmitMessage }}</p>
+
+    <input
+      (focus)="handleFocus()"
+      (blur)="handleBlur()"
+      placeholder="Focus and Blur"
+    />
+    <p>{{ focusEventMessage }}</p>
+    <p>{{ blurEventMessage }}</p>
+
+    <div (scroll)="handleScroll()" style="height: 100px; overflow: auto">
+      <p>{{ scrollEventMessage }}</p>
+      <p>scrolling element</p>
+      <div style="height: 200px"></div>
+    </div>
   </div>
 
-  <input (keydown)="handleKeyDown($event)" (keyup)="handleKeyUp($event)" placeholder="Press a key">
-  <p>{{ keyEventMessage }}</p>
+  <!-- <div appCustomStyle [backgroundColor]="'pink'">
+    This div has a custom background color!
+  </div> -->
 
-  <form (submit)="handleSubmit()">
-    <button type="submit">Submit Form</button>
-  </form>
-  <p>{{ formSubmitMessage }}</p>
-
-  <input (focus)="handleFocus()" (blur)="handleBlur()" placeholder="Focus and Blur">
-  <p>{{ focusEventMessage }}</p>
-  <p>{{ blurEventMessage }}</p>
-
-  <div (scroll)="handleScroll()" style="height: 100px; overflow: auto;">
-    <p>{{ scrollEventMessage }}</p>
-    <p>scrolling element </p>
-    <div style="height: 200px;"></div>
+  <input [(ngModel)]="userColor" placeholder="Enter color" />
+  <div appCustomStyle [backgroundColor]="userColor">
+    This div has a custom background color!
   </div>
-</div>
-
-<!-- <div appCustomStyle [backgroundColor]="'pink'">
-  This div has a custom background color!
-</div> -->
-
-<input [(ngModel)]="userColor" placeholder="Enter color">
-<div appCustomStyle [backgroundColor]="userColor">
-  This div has a custom background color!
-</div>
 
 
-<img src="../../assets/images/chemistry.jpg" alt="">
-    <table>
-      <thead>
-        <tr>
-          <th>Book's Title</th>
-          <th>Books's Description</th>
-          <th>Books's Price</th>
-          <th>Image</th>
-        </tr>
-      </thead>
-      <tbody>
-        <ng-container *ngFor="let item of books; let i = index">
+                          <!-- slider -->
+
+<!--                              for flipping  
+
+<swiper-container navigation="true" [slidesPerView]="1" [loop]="true" autoplay='{"delay": 1000}' autoHeight="true" effect="flip"></swiper-container> -->
+
+  <swiper-container navigation="true" [slidesPerView]="1" [loop]="true" autoplay='{"delay": 1000}' autoHeight="true" >
+    <ng-container *ngFor="let item of books; let i = index">
+      <swiper-slide autoHeight >
+        <ion-card>
+          <img alt="Silhouette of mountains" src="{{item.image}}" />
+          <ion-card-header>
+            <ion-card-title>{{item.price}}</ion-card-title>
+            <ion-card-subtitle>{{item.title}}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content> {{item.description}} </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+    </ng-container>
+  </swiper-container >
+
+  <ng-container *ngFor="let item of books; let i = index">
+    <ion-card>
+      <img alt="Silhouette of mountains" src="{{item.image}}" />
+      <ion-card-header>
+        <ion-card-title>{{item.price}}</ion-card-title>
+        <ion-card-subtitle>{{item.title}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content> {{item.description}} </ion-card-content>
+    </ion-card>
+  </ng-container>
+  <img src="../../assets/images/biology.jpg" alt="" />
+  <table>
+    <thead>
+      <tr>
+        <th>Book's Title</th>
+        <th>Books's Description</th>
+        <th>Books's Price</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of books; let i = index">
         <tr>
           <td>{{item.title}}</td>
           <td>{{item.description}}</td>
           <td>{{item.price}}</td>
-          <img src={{item.image}} alt="">
-          
+          <img src="{{item.image}}" alt="" />
+          <ion-card>
+            <img alt="Silhouette of mountains" src="{{item.image}}" />
+            <ion-card-header>
+              <ion-card-title>{{item.price}}</ion-card-title>
+              <ion-card-subtitle>{{item.title}}</ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content> {{item.description}} </ion-card-content>
+          </ion-card>
         </tr>
       </ng-container>
-      </tbody>
-    </table>
-
-
-  
-    
-
+    </tbody>
+  </table>
 </ion-content>
-

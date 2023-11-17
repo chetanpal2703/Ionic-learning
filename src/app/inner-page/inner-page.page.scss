@@ -5,3 +5,84 @@
 table,th,td{
     border: 2px solid black;
 }
+// .slider-swiper{
+//     width: 70%;
+// }
+// .slider-swiper img{
+//     width: 100%;
+// }
+
+swiper-container {
+    --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #cccccc);
+    --swiper-pagination-color: var(--ion-color-primary, #3880ff);
+    --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+    --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+    --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+  }
+  
+  swiper-slide {
+    display: flex;
+    position: relative;
+  
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+  
+    width: 100%;
+    height: 100%;
+  
+    font-size: 18px;
+  
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  swiper-slide img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+  }
+  
+//   ::ng-deep {
+//     .swiper-button-next, .swiper-button-prev {
+//         position: absolute;
+//         top: var(--swiper-navigation-top-offset,35%)!important;
+//         width: calc(var(--swiper-navigation-size)/ 44 * 30);
+//         height: var(--swiper-navigation-size);
+//         margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+//         z-index: 10;
+//         cursor: pointer;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         color: var(--swiper-navigation-color,var(--swiper-theme-color));
+//         margin-left: -14px;
+//     }
+//   }
+  
+/* Inside your component's styles (SCSS) */
+
+/* Inside your component's styles (SCSS) */
+
+/* Inside your component's styles (SCSS) */
+
+// swiper-container {
+//     /deep/ .swiper-button-next, /deep/ .swiper-button-prev {
+//       background-color: #ff0000; /* Change background color */
+//       color: #ffffff; /* Change text color */
+//       font-size: 20px; /* Change font size */
+//     }
+  
+//     /deep/ .swiper-button-next {
+//       right: 10px; /* Adjust right offset */
+//     }
+  
+//     /deep/ .swiper-button-prev {
+//       left: 10px; /* Adjust left offset */
+//     }
+//   }
+  
+  
+  

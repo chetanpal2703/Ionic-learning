@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { InnerPagePageRoutingModule } from './inner-page-routing.module';
 import { CustomStyleDirective } from './custom-style.directive';
 import { InnerPagePage } from './inner-page.page';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
   imports: [
     CommonModule,
@@ -16,6 +16,7 @@ import { InnerPagePage } from './inner-page.page';
     InnerPagePageRoutingModule,
     
   ],
-  declarations: [InnerPagePage,CustomStyleDirective,]
+  declarations: [InnerPagePage,CustomStyleDirective,],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class InnerPagePageModule {}
