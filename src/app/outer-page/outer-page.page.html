@@ -21,7 +21,6 @@
 
 </ion-content> -->
 
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>outer-page</ion-title>
@@ -35,9 +34,6 @@
   <p>{{receivedData.dob}}</p>
   <p>{{receivedData.mobile}}</p>
   <p>{{receivedData.password1}}</p>
-  
-
-
 
   <ion-button class="btncls">In the outer page </ion-button>
   <ion-list>
@@ -56,5 +52,42 @@
   <p>
     Today's item: {{item}}
   </p>
+
+  <form [formGroup]="outerform" (ngSubmit)="submitouterForm()">
+    <ion-list>
+
+      <!-- <ion-item lines="full" class="ion-no-padding">
+        <ion-label position="floating" class="change-font">Name</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item> -->
+      <div>{{ receivingInnerpageData }}</div>
+
+      <ion-item lines="full" class="ion-no-padding">
+        <ion-label position="floating" class="change-font">Book-Name</ion-label>
+        <ion-input type="text" formControlName="title"></ion-input>
+      </ion-item>
+    
+      <ion-item lines="full" class="ion-no-padding">
+        <ion-label position="floating" class="change-font">Book Price</ion-label>
+        <ion-input type="text" formControlName="price"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full" class="ion-no-padding">
+        <ion-label position="floating" class="change-font">Book-Description</ion-label>
+        <ion-input type="text" formControlName="description" ></ion-input>
+      </ion-item>
+
+      <ion-item lines="full" class="ion-no-padding">
+        <ion-label position="floating" class="change-font">Book-Img</ion-label>
+        <ion-input type="text" formControlName="image"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <ion-button type="submit" color="danger" expand="block"
+    >Submit</ion-button
+  >
+  </form>
 </ion-content>
+
+
 

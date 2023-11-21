@@ -5,26 +5,31 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">test-form-send-data</ion-title>
     </ion-toolbar>
-  </ion-header>
-      <p>{{receivedData.name}}</p>
+  </ion-header> -->
+      <!-- <p>{{receivedData.name}}</p>
       <p>{{receivedData.email}}</p>
       <p>{{receivedData.fathername}}</p>
       <p>{{receivedData.dob}}</p>
       <p>{{receivedData.mobile}}</p>
       <p>{{receivedData.gender }}</p>
-      <p>{{receivedData.password1 }}</p>
+      <p>{{receivedData.password1 }}</p> -->
 
       <!-- <p>{{receivedData.hobbies }}</p>
       <p>{{receivedData.skills[0].name}}</p> -->
 
-  <ion-list>
+  <!-- <ion-list>
     <ion-item *ngFor="let skill of receivedData.skills">
       {{ skill.name }} - Checked: {{ skill.checked ? 'Yes' : 'No' }}
     </ion-item>
-  </ion-list>
+  </ion-list> -->
+<div *ngIf="isbutton">some text</div>
+  <button (click)="showbutton()">show text</button>
+  <br>
+  <br>
+  <button (click)="hidebutton()">hide text</button>
 
 </ion-content>

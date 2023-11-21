@@ -14,6 +14,7 @@ import { ActivatedRoute , Router} from '@angular/router';
 export class TestFormSendDataPage implements OnInit {
   receivedData: any;
   filteredSkills: Skill[]; 
+  isbutton:boolean=true;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -23,5 +24,13 @@ export class TestFormSendDataPage implements OnInit {
       this.filteredSkills = this.receivedData.skills.filter((skill: Skill) => skill.checked === true);
     });
     console.log(this.receivedData,"recevied data came on the other page")
+  }
+  showbutton(){
+    console.log("inside showbutton")
+    this.isbutton=true;
+  }
+  hidebutton(){
+    console.log("inside hidebutton")
+    this.isbutton=false;
   }
 }

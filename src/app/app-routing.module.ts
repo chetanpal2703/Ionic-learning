@@ -23,6 +23,14 @@ const routes: Routes = [
     path: 'test-form-send-data',
     loadChildren: () => import('./test-form-send-data/test-form-send-data.module').then( m => m.TestFormSendDataPageModule)
   },
+  {
+    path: 'first-page',
+    loadChildren: () => import('./first-page/first-page.module').then( m => m.FirstPagePageModule)
+  },
+  {
+    path: 'second-page',
+    loadChildren: () => import('./second-page/second-page.module').then( m => m.SecondPagePageModule)
+  },
   // {
   //   path: 'outer-page',
   //   loadChildren: () => import('./outer-page/outer-page.module').then( m => m.OuterPageModule)

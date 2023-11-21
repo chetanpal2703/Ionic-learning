@@ -60,6 +60,7 @@ export class HomePage {
   }
   
   ngOnInit() {
+    //for password toggling 
     setTimeout(() => {
       const passwordControl = this.ionicForm.get('password1');
       if (passwordControl) {
@@ -215,8 +216,6 @@ export class HomePage {
       return console.log('Please provide all the required values!');
     }
   };
-
-
 }
 
 
